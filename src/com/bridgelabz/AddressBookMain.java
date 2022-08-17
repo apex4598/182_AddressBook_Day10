@@ -8,8 +8,9 @@ import static com.bridgelabz.AddressBook.scanner;
 public class AddressBookMain {
 
     public static final int ADD = 1;
-    public static final int QUIT = 3;
+    public static final int QUIT = 4;
     public static final int EDIT = 2;
+    public static final int DELETE = 3;
 
     public static void main(String[] args) {
         System.out.println("<-------------Welcome To Address Book----------------->");
@@ -27,7 +28,7 @@ public class AddressBookMain {
         System.out.println("Enter Your Choice");
 
         while (!exit) {
-            System.out.println("1.Create/Add Contact\t 2.Update Contact\t 3.Quit");
+            System.out.println("1.Create/Add Contact\t 2.Update Contact\t 3.Delete Contact \t 4.Quit");
             int choice = scanner.nextInt();
 
             switch (choice) {
@@ -38,6 +39,10 @@ public class AddressBookMain {
                 case EDIT:
                     System.out.println("Update Contact");
                     services.get(addressBookNameAsKey).editContact();
+                    break;
+                case DELETE:
+                    System.out.println("Delete Contact");
+                    services.get(addressBookNameAsKey).deleteContactByName();
                     break;
                 case QUIT:
                     exit = true;

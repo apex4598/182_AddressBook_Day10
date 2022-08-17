@@ -140,4 +140,22 @@ public class AddressBook {
             }
         }
     }
-}
+        public void deleteContactByName() {
+
+            System.out.println("Enter first name for delete contact:");
+            String firstName = scanner.next();
+
+            Iterator<Contact> iterator = listContact.listIterator();
+
+            while (iterator.hasNext()) {
+                Contact contacts = iterator.next();
+                if (firstName.equals(contacts.getFirstName())) {
+                    listContact.remove(contacts);
+                    System.out.println("Contact: " + contacts.getFirstName() + " " + "deleted successfully...");
+                }
+            }
+
+            printContacts();
+        }
+    }
+
