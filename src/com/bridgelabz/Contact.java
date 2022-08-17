@@ -93,4 +93,5 @@ public class Contact {
                 + ", email=" + email + ", address=" + address + ", state=" + state + ", city=" + city + ", zip=" + zip
                 + "]";
     }
+
 }
